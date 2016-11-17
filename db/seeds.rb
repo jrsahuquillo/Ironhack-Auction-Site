@@ -10,7 +10,13 @@
 #   user.product_entries.create("Product#{i}")
 # end
 
-User.create!(name: "Sahu", mail: "jrsahuquillo@gmail.com")
-User.create!(name: "John", mail: "john@gmail.com")
-User.create!(name: "Ann", mail: "annholt@gmail.com")
-User.create!(name: "Mary", mail: "maryjackson@gmail.com")
+# User.create!(name: "Sahu", mail: "jrsahuquillo@gmail.com")
+# User.create!(name: "John", mail: "john@gmail.com")
+# User.create!(name: "Ann", mail: "annholt@gmail.com")
+# User.create!(name: "Mary", mail: "maryjackson@gmail.com")
+
+
+1.upto(10).each do |i|
+  user = User.create!(name: "User#{i}", mail: "user#{i}@gmail.com")
+  user.products.create(title: "Product#{i}", description:"Product description #{}", deadline: DateTime.now + i.day)
+end
