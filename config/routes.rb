@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
+  get '/users/:user_id/products', to: 'products#index'
 end
