@@ -5,7 +5,7 @@
     <li>
       <b>Title: </b> <%= product.title %>
       | <b>Description: </b><%= product.description %>
-      | <b>Deadline: </b> <%= product.deadline.strftime("Day: %F Hour: %T") %>
+      | <b>Deadline: </b> <%= product.deadline.strftime("%Y-%m-%d") %>
       <br>
 
       <%= link_to 'Edit product >> ', "/users/#{@user.id}/products/#{product.id}/edit" %>
