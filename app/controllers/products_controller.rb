@@ -47,6 +47,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by(id: params[:user_id])
+    @user_product = @user.products.find_by(id: params[:id]).destroy
+    redirect_to action: :index, user_id: @user.id
+  end
+
   private
 
   def product_params

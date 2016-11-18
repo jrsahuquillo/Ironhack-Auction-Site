@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   patch '/users/:user_id/products/:id', to: 'products#update', as: :user_product
 
+  delete '/users/:user_id/products/:id', to: 'products#destroy'
+
 end

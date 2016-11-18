@@ -6,7 +6,11 @@
       <b>Title: </b> <%= product.title %>
       | <b>Description: </b><%= product.description %>
       | <b>Deadline: </b> <%= product.deadline %>
+      <br>
       <%= link_to 'Edit product >> ', "/users/#{@user.id}/products/#{product.id}/edit" %>
+      <%= link_to('Delete >>', user_product_path(@user, product),
+          method: :delete, data: { confirm: 'Are you sure to delete?' }) %>
+      <br><br>
     </li>
   <% end %>
 </ul>
