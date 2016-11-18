@@ -1,7 +1,4 @@
-<h1>Add new product to <%=@user.name %>, ID: <%=  @user.id  %></h1>
-<hr>
-<%= render 'form' %>
-<!-- <% if @user_product.errors.any? %>
+<% if @user_product.errors.any? %>
   <ul>
     <% @user_product.errors.full_messages.each do |error_msg| %>
       <li><%= error_msg %></li>
@@ -22,4 +19,4 @@
   <%= f.button %>
 <% end %>
 <br>
-<a href="/users/<%= @user.id %>/products/">Back to products</a> -->
+<a href="/users/<%= @user.id %>/products/">Back to products</a>

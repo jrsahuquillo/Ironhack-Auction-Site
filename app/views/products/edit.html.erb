@@ -1,4 +1,4 @@
-<h1>Add new product to <%=@user.name %>, ID: <%=  @user.id  %></h1>
+<h1>Edit product to <%=@user.name %>, ID: <%=  @user.id  %></h1>
 <hr>
 <%= render 'form' %>
 <!-- <% if @user_product.errors.any? %>
@@ -20,6 +20,7 @@
   <%= f.date_field :deadline %>
   <br><br>
   <%= f.button %>
+  <%= link_to 'Cancel', user_products_path(@user) %>
 <% end %>
 <br>
-<a href="/users/<%= @user.id %>/products/">Back to products</a> -->
+<a href="/users/<%= @user.id %>/products/">Back to project</a> -->

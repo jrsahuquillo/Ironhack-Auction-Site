@@ -4,7 +4,8 @@
   <ul>
     <% @users.each do |user| %>
     <li>
-      <%= user.name + ": " + user.mail %>
+      <%= user.name + ":  " + user.mail %>
+        <a href ="/users/<%= user.id %>">Show user</a>
     </li>
     <% end %>
     <br>

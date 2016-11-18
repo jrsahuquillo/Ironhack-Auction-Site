@@ -1,4 +1,4 @@
-<h1><%= @user.name %></h1>
+<h1>User: <%= @user.name %></h1>
 <hr>
 <h2>User ID :<%= @user.id.to_s %></h2>
 <br>
@@ -10,9 +10,11 @@
     <% if @user.mail.present? %>
       e-mail: <%= @user.mail %>
     <% end %>
+    <br>
+    <%= @user.name %> has <%= @user.products.length %> products.
   </li>
 </ul>
 <br>
-<a href="/users">Back to users list</a>
-<br>
 <a href="/users/<%= @user.id %>/products">Products list></a>
+<br>
+<h3><a href="/users">Back to users list >></a></h3>

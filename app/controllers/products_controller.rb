@@ -21,4 +21,10 @@ class ProductsController < ApplicationController
           render "new"
         end
   end
+
+  def edit
+    @user = User.find params[:user_id]
+    @user_product = @user.products.find params[:id]
+  end
+
 end

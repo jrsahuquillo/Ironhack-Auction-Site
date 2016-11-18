@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   post '/users/:user_id/products', to: 'products#create', as: :user_products
 
+  get '/users/:user_id/products/:id/edit', to: 'products#edit'
+
+  patch '/users/:user_id/products/:id', to: 'products#update', as: :user_product
+
 end
