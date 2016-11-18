@@ -11,18 +11,20 @@ class ProductsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-        @user_product = @user.products.new(product_params)
+      @user_product = @user.products.new(product_params)
 
-                                # (title: params[:product][:title],
-                                # description: params[:product][:description],
-                                # deadline: params[:product][:deadline])
-                                    #Changed by strong params! -> product_params
+                            # (title: params[:product][:title],
+                            # description: params[:product][:description],
+                            # deadline: params[:product][:deadline])
+                                #Changed by strong params! -> product_params
 
-        if @user_product.save
-          redirect_to "/users/#{@user.id}/products"
-        else
-          render "new"
-        end
+      if @user_product.save
+        flash[:notice] = "New product added successfully"
+        redirect_to user_products_path(@user)
+        # redirect_to "/users/#{@user.id}/products"
+      else
+        render "new"
+      end
   end
 
   def edit

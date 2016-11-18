@@ -1,6 +1,9 @@
 <h1>User: <%= @user.name %></h1>
 <hr>
 <h2>User ID :<%= @user.id.to_s %></h2>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
 <br>
 <ul>
   <li>

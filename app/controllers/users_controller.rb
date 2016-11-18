@@ -21,6 +21,7 @@ class UsersController < ApplicationController
       mail: params[:user][:mail])
 
     if @user.save
+      flash[:notice] = "New user added successfully"
       redirect_to "/users/#{@user.id}" #Comillas dobles!!!!
     else
       render "/users/new"
