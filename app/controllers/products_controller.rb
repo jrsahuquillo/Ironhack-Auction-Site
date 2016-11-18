@@ -55,6 +55,15 @@ class ProductsController < ApplicationController
     redirect_to action: :index, user_id: @user.id
   end
 
+  def show
+    @user = User.find_by(id: params[:user_id])
+    @user_product = @user.products.find_by(id: params[:id])
+    unless @user_product
+      render 'No products found'
+    end
+
+  end
+
   private
 
   def product_params
